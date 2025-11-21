@@ -1,0 +1,84 @@
+INSERT INTO City (City_Name) VALUES
+(N'Москва'),
+(N'Санкт-Петербург'),
+(N'Казань'),
+(N'Новосибирск');
+
+
+INSERT INTO Address (Address, Home_number, City) VALUES
+(N'Ленинградский проспект', 12, 1),
+(N'Набережная реки Казанки', 45, 3),
+(N'Красный проспект', 8, 4),
+(N'Воскресенская улица', 23, 2);
+
+INSERT INTO Agents_Specialization (Specialization) VALUES
+(N'Продажа жилья'),
+(N'Покупка жилья'),
+(N'Аренда недвижимости'),
+(N'Коммерческая недвижимость');
+
+INSERT INTO Agents (Last_Name, First_Name, Middle_Name, Oklad, Nadbavka, Phone, Email, Spec) VALUES
+(N'Иванов', N'Алексей', N'Петрович', 30000, 5000, '8999123456', 'ivanov@mail.ru', 1),
+(N'Петрова', N'Мария', N'Игоревна', 35000, 6000, '8999765432', 'petrova@mail.ru', 2),
+(N'Смирнов', N'Дмитрий', N'Андреевич', 32000, 5500, '8999888777', 'smirnov@mail.ru', 3),
+(N'Кузнецова', N'Оксана', N'Владимировна', 38000, 7000, '8999555333', 'kuznecova@mail.ru', 4);
+
+INSERT INTO Klient (Last_Name, First_Name, Middle_Name, BirthDay, Phone, Email, Agent) VALUES
+(N'Иванова', N'Елена', N'Викторовна', '1990-05-12', '8999000111', 'elena@mail.ru', 1),
+(N'Соболев', N'Максим', N'Иванович', '1985-03-20', '8999000222', 'maxim@mail.ru', 2),
+(N'Лебедева', N'Анна', N'Сергеевна', '1992-07-15', '8999000333', 'anna@mail.ru', 3),
+(N'Федоров', N'Павел', N'Александрович', '1980-11-05', '8999000444', 'pavel@mail.ru', 4),
+(N'Ильина', N'Ольга', N'Андреевна', '1988-04-22', '8999111223', 'olga.ilina@mail.ru', 2),
+(N'Морозов', N'Константин', N'Владимирович', '1975-09-10', '8999333445', 'k.morozov@mail.ru', 3),
+(N'Васильева', N'Нина', N'Петровна', '1995-02-28', '8999555667', 'nina.v@mail.ru', 1),
+(N'Романов', N'Анатолий', N'Григорьевич', '1982-12-05', '8999777889', 'anatoly.rom@mail.ru', 4);
+
+INSERT INTO Klient_Seller (Klient_Id, Min_Summ) VALUES
+(1, 1500000),
+(2, 2000000),
+(3, 1800000),
+(4, 2200000);
+
+INSERT INTO Klient_Buyer (Klient_Id, Klient_wish) VALUES
+(5, N'Квартира в центре города'),
+(6, N'Дом за городом с участком'),
+(7, N'Квартира возле школы'),
+(4, N'Дача в пригороде');
+
+INSERT INTO Object_Type (Type_name) VALUES
+(N'Квартира'),
+(N'Дом'),
+(N'Коммерческая недвижимость'),
+(N'Земельный участок');
+
+INSERT INTO Object_Status (Object_Stat) VALUES
+(N'Наличие'),
+(N'Продан'),
+(N'Зарезервирован')
+
+INSERT INTO Object_Condition (Object_Condition) VALUES
+(N'Отличное'),
+(N'Хорошее'),
+(N'Среднее'),
+(N'Плохое');
+
+INSERT INTO Object (Object_Desc, Object_Type, Square, Floor, Num_of_rooms, Status, Adress, Condition, Seller_Id) VALUES
+(N'Просторная квартира в центре', 1, 75, 5, 3, 1, 1, 1, 1),
+(N'Дом в пригороде с участком', 2, 120, 1, 5, 1, 2, 2, 2),
+(N'Офисное помещение', 3, 50, 3, 2, 1, 3, 3, 3),
+(N'Земельный участок', 4, 1500, 0, 0, 1, 4, 4, 4);
+
+INSERT INTO Deal_Type (Deal_Spec) VALUES
+(N'Продажа'),
+(N'Аренда')
+
+INSERT INTO Deal_Status (Status_Sp) VALUES
+(N'Активна'),
+(N'Завершена'),
+(N'Отменена'),
+(N'Приостановлена');
+
+INSERT INTO Deal (Deal_Date, Deal_Type, Object, Klient_Buyer, Deal_Status, Value, Term) VALUES
+('2025-10-01', 1, 1, 1, 1, 7500000, '2026-12-01'),
+('2025-10-05', 2, 2, 2, 1, 5500000, '2026-12-15'),
+('2025-10-12', 1, 4, 3, 1, 2000000, '2026-01-15');
